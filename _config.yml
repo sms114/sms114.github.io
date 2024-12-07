@@ -22,7 +22,7 @@ title_separator          : "|"
 subtitle                 : "sms114.co.kr" # site tagline that appears below site title in masthead
 name                     : "SMS114"
 description              : "문자 발송 블로그"
-url                      : "sms114.github.io"
+url                      : "https://sms114.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
