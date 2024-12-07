@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "SMS114"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "문자발송 블로그입니다."
+  bio              : "대량문자 블로그입니다."
   location         : "South Korea"
   email            :
   links:
@@ -209,7 +209,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: "Asia/Seoul"
+timezone: Asia/Seoul
 
 
 # Pagination with jekyll-paginate
@@ -272,16 +272,16 @@ tag_archive:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 
 # HTML Compression
