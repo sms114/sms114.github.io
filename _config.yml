@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "문자발송114"
+title                    : "누리넷 서비스 플렛폼"
 title_separator          : "|"
 subtitle                 : "sms114.co.kr" # site tagline that appears below site title in masthead
-name                     : "SMS114"
-description              : "문자 발송 블로그"
+name                     : "게시판"
+description              : "누리넷 게시판 DASHBOARD"
 url                      : "https://sms114.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -113,9 +113,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "SMS114"
+  name             : "누리넷(주)"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "대량문자 블로그입니다."
+  bio              : "문자발송 및 DIY 상품 판매"
   location         : "South Korea"
   email            :
   links:
