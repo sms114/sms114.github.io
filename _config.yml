@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "누리넷(주)"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/git_image1.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "문자발송 및 DIY 상품 판매"
   location         : "South Korea"
   email            :
@@ -127,21 +127,26 @@ author:
       url: "https://www.sms114.co.kr"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://sms114.github.io/"
+      url: "https://github.com/sms114/sms114.github.io"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/innolifes"
+    - label: "YouTube"
+      icon: "fab fa-youtube"
+      url: "https://www.youtube.com/@김경훈-n5l"
 
 # Site Footer
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://sms114.github.io/"
+      url: "https://github.com/sms114/sms114.github.io"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/innolifes"
-
+    - label: "YouTube"
+      icon: "fab fa-youtube"
+      url: "https://www.youtube.com/@김경훈-n5l"
 
 # Reading Files 
 include:
