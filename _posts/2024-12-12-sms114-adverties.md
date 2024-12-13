@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "[문자발송] 문자 한 통으로 매출이 바뀝니다!"
-categories: sending
-tag: [문자발송]
+categories: 문자발송
+tag: [문자발송, 광고]
 author_profile: false
 toc: true
 toc_sticky: true

@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "[문자발송] 5초면 충분합니다. 문자 한 통으로 고객의 마음을 사로잡으세요"
-categories: sending
-tag: [문자발송]
+categories: 문자발송
+tag: [sms114]
 author_profile: false
 toc: true
 toc_sticky: true

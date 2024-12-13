@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "[문자발송] 문자 발송을 위한 최고의 선택"
-categories: sending
-tag: [문자발송]
+categories: 문자발송
+tag: [sms114]
 author_profile: false
 toc: true
 toc_sticky: true
