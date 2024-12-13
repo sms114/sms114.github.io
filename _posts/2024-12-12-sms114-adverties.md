@@ -8,15 +8,10 @@ toc: true
 toc_sticky: true
 toc_label: "목차"
 toc_icon: "fas fa-utensils" 
-# sidebar:
-#     nav: "docs"
+sidebar:
+   nav: "counts"
 search: true
 ---
-
-**[공지사항]** [SMS114 문자발송 솔루션 바로가기](https://www.sms114.co.kr)
-{: .notice--danger}
-
-
 
 ## **"문자 한 통으로 매출이 바뀝니다!"**
 소매업체의 성장 파트너, **sms114.co.kr**
