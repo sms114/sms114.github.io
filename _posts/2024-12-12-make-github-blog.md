@@ -10,7 +10,7 @@ toc_label: "목차"
 toc_icon: "fas fa-utensils" 
 # sidebar:
 #     nav: "docs"
-search: false
+search: true
 ---
 
 
