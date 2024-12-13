@@ -2,14 +2,14 @@
 layout: single
 title: "[문자발송] 5초면 충분합니다. 문자 한 통으로 고객의 마음을 사로잡으세요"
 categories: sending
-tag: [sms114, 대량발송, 문자발송]
+tag: [문자발송]
 author_profile: false
 toc: true
 toc_sticky: true
 toc_label: "목차"
 toc_icon: "fas fa-utensils" 
-# sidebar:
-#    nav: "docs"
+sidebar:
+   nav: "counts"
 search: true
 ---
 

@@ -2,7 +2,7 @@
 layout: single
 title: "[문자발송] 국내 최저가로 대량문자발송을 시작하세요."
 categories: sending
-tag: [sms114, 대량발송, 문자발송]
+tag: [문자발송]
 author_profile: false
 toc: true
 toc_sticky: true
