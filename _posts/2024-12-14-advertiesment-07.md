@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "[문자발송] 문자 발송의 새로운 차원이 열린다"
-categories: 문자발송
-tag: [sms114]
+categories: [문자발송, youtube]
+tag: [유튜브광고]
 author_profile: false
 typora-root-url: ../
 toc: true

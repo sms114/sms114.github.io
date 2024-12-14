@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "[문자발송] 스마트한 문자발송의 시작!! 문자발송114"
-categories: 문자발송
-tag: [sms114]
+categories: [문자발송, youtube]
+tag: [유튜브광고]
 author_profile: false
 typora-root-url: ../
 toc: true

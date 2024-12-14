@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "[문자발송] 스마트 비즈니스를 위한 문자 발송 플랫폼"
-categories: 문자발송
-tag: [sms114]
+categories: [문자발송, youtube]
+tag: [유튜브광고]
 author_profile: false
 typora-root-url: ../
 toc: true
