@@ -14,7 +14,7 @@ sidebar:
 search: true
 ---
 
-<video src="/C:/Users/SAMSUNG/OneDrive/문서/카카오톡 받은 파일/KakaoTalk_20241214_164132843.mp4"></video>
+{% include video id="TdwHU0_YRtM" provider="youtube" %}
 
 # 스마트한 문자 발송의 시작, SMS114.co.kr
 
