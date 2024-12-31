@@ -90,3 +90,75 @@ const puppeteer = require('puppeteer');
 
 ```
 
+## 아래 코드는 그나마 pupeteer 에서 작동되는, 즉 타임아웃 발생하지 않고 결과값 가져오는 퍼펫 코드임.
+
+```js
+const puppeteer = require('puppeteer');
+
+(async () => {
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--single-process',
+            '--no-zygote'
+        ]
+    });
+
+    const page = await browser.newPage();
+
+    // 사용자 에이전트 설정
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
+
+    const url = 'https://www.agoda.com/search?city=14690&locale=ko-kr&ckuid=5b1f2b5b-fee5-4cea-9742-65ea37b41d8f&prid=0&currency=KRW&correlationId=b9b2e432-4892-487b-be2a-c93b60ce3fdc&analyticsSessionId=2460144428099110547&pageTypeId=103&realLanguageId=9&languageId=9&origin=KR&stateCode=28&cid=1922887&userId=5b1f2b5b-fee5-4cea-9742-65ea37b41d8f&whitelabelid=1&loginLvl=0&storefrontId=3&currencyId=26&currencyCode=KRW&htmlLanguage=ko-kr&cultureInfoName=ko-kr&machineName=hk-pc-2f-acm-web-user-6f448ff4bb-lxkb9&trafficGroupId=5&trafficSubGroupId=122&aid=82361&useFullPageLogin=true&cttp=4&isRealUser=true&mode=production&browserFamily=Chrome&cdnDomain=agoda.net&checkIn=2025-01-09&checkOut=2025-01-18&rooms=1&adults=1&children=0&priceCur=KRW&los=9&textToSearch=%EC%84%9C%EC%9A%B8&productType=-1&travellerType=0&familyMode=off';
+
+    try {
+        // 페이지 이동
+        await page.goto(url, { waitUntil: 'load', timeout: 120000 });
+
+        // 첫 10개의 호텔 이름과 URL 추출
+        const hotelData = await page.evaluate(() => {
+            const hotels = Array.from(document.querySelectorAll('h3[data-selenium="hotel-name"]')).slice(0, 10); // 첫 10개만 선택
+            return hotels.map(hotel => {
+                const hotelName = hotel.textContent.trim(); // 호텔 이름
+                const parentLink = hotel.closest('a'); // h3 요소의 가장 가까운 부모 a 태그
+                const href = parentLink ? parentLink.href : null; // href 속성 추출
+                return [hotelName, href];
+            });
+        });
+
+        console.log(`총 ${hotelData.length}개의 호텔 데이터를 가져왔습니다:`);
+        console.log(hotelData);
+    } catch (error) {
+        console.error('스크립트 실행 중 오류가 발생했습니다:', error.message);
+    } finally {
+        await browser.close();
+    }
+})();
+
+```
+
+### 결과값
+
+```
+[ec2-user@ip-172-31-5-86 html]$ node list.js
+총 3개의 호텔 데이터를 가져왔습니다:
+[
+  [
+    'Dream Single House',
+    'https://www.agoda.com/dream-single-house/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1922887&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2025-01-9&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&tspTypes=-1&los=9&searchrequestid=56d83bb4-779f-4d9a-95e1-e82c65e3bf92'
+  ],
+  [
+    'Rodem house',
+    'https://www.agoda.com/rodem-house/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1922887&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2025-01-9&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&los=9&searchrequestid=56d83bb4-779f-4d9a-95e1-e82c65e3bf92'
+  ],
+  [
+    'E Livingtel',
+    'https://www.agoda.com/e-livingtel_3/hotel/seoul-kr.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1922887&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2025-01-9&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=0&showReviewSubmissionEntry=false&currencyCode=KRW&isFreeOccSearch=false&los=9&searchrequestid=56d83bb4-779f-4d9a-95e1-e82c65e3bf92'
+  ]
+]
+```
+
