@@ -113,7 +113,7 @@ const puppeteer = require('puppeteer');
     // 사용자 에이전트 설정
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
 
-    const url = 'https://www.agoda.com/search?city=14690&locale=ko-kr&ckuid=5b1f2b5b-fee5-4cea-9742-65ea37b41d8f&prid=0&currency=KRW&correlationId=b9b2e432-4892-487b-be2a-c93b60ce3fdc&analyticsSessionId=2460144428099110547&pageTypeId=103&realLanguageId=9&languageId=9&origin=KR&stateCode=28&cid=1922887&userId=5b1f2b5b-fee5-4cea-9742-65ea37b41d8f&whitelabelid=1&loginLvl=0&storefrontId=3&currencyId=26&currencyCode=KRW&htmlLanguage=ko-kr&cultureInfoName=ko-kr&machineName=hk-pc-2f-acm-web-user-6f448ff4bb-lxkb9&trafficGroupId=5&trafficSubGroupId=122&aid=82361&useFullPageLogin=true&cttp=4&isRealUser=true&mode=production&browserFamily=Chrome&cdnDomain=agoda.net&checkIn=2025-01-09&checkOut=2025-01-18&rooms=1&adults=1&children=0&priceCur=KRW&los=9&textToSearch=%EC%84%9C%EC%9A%B8&productType=-1&travellerType=0&familyMode=off';
+    const url = 'https://www.agoda.com/destination/city/seoul-kr.html?cid=1844104&ds=X2QnafKJAH9KDAAk';
 
     try {
         // 페이지 이동

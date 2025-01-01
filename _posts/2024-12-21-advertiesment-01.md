@@ -2,7 +2,7 @@
 layout: single
 title:  "[문자발송] K-시민의식 대단해요"
 categories: 문자발송
-tag: [sms114 ,문자발송 전문업체, 치환문자, 단체문자, 관고문자, 선거문자, 엑셀로 주소록 간편등록, 예약발송, SMS, MMS, 대량문자, 치환문자, 주소록관리, 문자연동, 문자발송전문업체, 신년문자발송, 신년인사, 윤석열내란, 윤석열탄핵 ]
+tag: [ 문자발송 ]
 author_profile: false
 typora-root-url: ../
 toc: true
