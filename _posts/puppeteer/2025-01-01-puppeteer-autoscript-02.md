@@ -5,7 +5,7 @@ categories: puppeteer
 tag: [ java ]
 author_profile: false
 typora-root-url: ../
-toc: true
+toc: false
 toc_sticky: true
 toc_label: "목차"
 toc_icon: "fas fa-utensils" 
