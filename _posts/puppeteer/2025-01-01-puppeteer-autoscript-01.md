@@ -9,8 +9,9 @@ toc: true
 toc_sticky: true
 toc_label: "목차"
 toc_icon: "fas fa-utensils" 
-sidebar:
-   nav: "counts"
+remove_sidebar: true
+##sidebar:
+##   nav: "counts"
 search: true
 
 ---

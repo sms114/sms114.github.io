@@ -66,6 +66,41 @@ body {
   }
 }
 
+
+// 2025.01.02 : 이 클래스는 사이드바 너비를 제거하는 스타일 정의함.
+.page.no-sidebar {
+  @include breakpoint($large) {
+    float: inline-end;
+    width: calc(100%); 
+    /*width: calc(100%);    */
+    padding-inline-end: $right-sidebar-width-narrow;
+  }
+
+  @include breakpoint($x-large) {
+    width: calc(100%); 
+    /*width: calc(100%);    */
+    padding-inline-end: $right-sidebar-width;
+  }
+
+  .page__inner-wrap {
+    float: inline-start;
+    margin-top: 1em;
+    margin-inline: 0;
+    width: 100%;
+    clear: both;
+
+    .page__content,
+    .page__meta,
+    .page__share {
+      position: relative;
+      float: inline-start;
+      margin-inline: 0;
+      width: 100%;
+      clear: both;
+    }
+  }
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;
