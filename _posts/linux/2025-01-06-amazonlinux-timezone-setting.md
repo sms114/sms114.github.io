@@ -19,10 +19,10 @@ search: true
 # 🕰️ Linux에서 UTC를 KST로 바꾸기! (한 번에 실행 가능)
 
 # 1. 현재 설정된 타임존 심볼릭 링크 삭제
-sudo rm /etc/localtime && \
+sudo rm /etc/localtime
 
 # 2. 새로운 타임존으로 심볼릭 링크 생성 (Asia/Seoul)
-sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 # 3. 변경된 타임존 확인
 date
