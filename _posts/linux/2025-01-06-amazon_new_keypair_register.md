@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[linux] amazon 키페어 재등록 방법"
-categories: puppeteer
+categories: linux
 tag: [ java ]
 author_profile: false
 typora-root-url: ../

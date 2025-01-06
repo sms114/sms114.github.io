@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[linux] 타임존 설정 변경 및 확인해보기"
-categories: puppeteer
+categories: linux
 tag: [ java ]
 author_profile: false
 typora-root-url: ../
