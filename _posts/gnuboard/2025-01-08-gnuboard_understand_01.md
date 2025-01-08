@@ -241,3 +241,33 @@ search: true
 ### **2️⃣ 포인트 소진 주의**
 
 - 포인트를 함부로 써버리면 나중에 필요한 자료를 못 받을 수도 있으니까, 포인트 관리 잘해야 해.
+
+---
+
+
+
+그 외 그누보드로 생성된 사이트 모음
+
+### 씨네스트
+
+<https://cineaste.co.kr/> 
+
+### 딜바다
+
+<https://www.dealbada.com/>
+
+### 쿨앤조이
+
+<https://coolenjoy.net/>
+
+### 개집(개그 집합소)
+
+<https://gezip.net/>
+
+
+
+
+
+### ### Effortlessly Analyze Your Competitive Landscape
+
+<https://www.similarweb.com/>
