@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[ referencedev ] 레퍼런스 개발론이란? "
+title:  "[ 레퍼런스 개발법 ] 레퍼런스 개발론이란? "
 categories: [ wordpress ]
 tag: [ wordpress ]
 author_profile: false
