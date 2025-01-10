@@ -29,7 +29,7 @@ alias 지정을 지정을 통해 좀 더 편의를 주기 위해 .bashrc 내 ali
 
 1. keypair가 저장된 local 폴더에서 git bash 창을 띄운다.
 
-![image-20250110113931347](/../images/2025-01-10-linux_amaon_bashrc_fixing/image-20250110113931347.png)
+![image-20250110115604617](/../images/2025-01-10-linux_amaon_bashrc_fixing/image-20250110115604617.png)
 
 2. 아래와 같이,  .bashrc 나 .bash_profile 의 실행을 무시하는 옵션을 통해 bash  환경에 접속 한다.
 
