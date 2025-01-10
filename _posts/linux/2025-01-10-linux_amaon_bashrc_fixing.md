@@ -19,9 +19,17 @@ search: true
 
 Amazon EC2 인스턴스에서
 
-alias 지정을 지정을 통해 좀 더 편의를 주기 위해 .bashrc 내 alias 수정을 했는데, 아예 어떤 방법으로도 접속이 안된다.
+.bashrc 에 alias 몇 개 추가하고 편의를 도모하다가, 특수문자를 잘 못 사용하는 바람에 ec2 접속조차 안된다.
 
-큰일났다!! :cry:
+이럴때 어떻게 해야 할까?
+
+.
+
+.
+
+.
+
+.
 
 
 
@@ -31,7 +39,7 @@ alias 지정을 지정을 통해 좀 더 편의를 주기 위해 .bashrc 내 ali
 
 ![image-20250110115604617](/../images/2025-01-10-linux_amaon_bashrc_fixing/image-20250110115604617.png)
 
-2. 아래와 같이,  .bashrc 나 .bash_profile 의 실행을 무시하는 옵션을 통해 bash  환경에 접속 한다.
+2. 아래와 같이,  .bashrc 나 .bash_profile 의 실행을 무시하는 옵션으로 우회 접속 한다.
 
 ```js
 SAMSUNG@DESKTOP-innolifes MINGW64 /c/Utils/AWS-Keypair
@@ -59,6 +67,16 @@ SSH 명령어의 **`-t` 옵션**은 **터미널 할당**을 의미해. 원격 �
 - 원격 서버에서 **대화형 쉘** 실행 (`bash`, `sh`, `zsh` 등).
 - **대화형 프로그램** 실행 (`top`, `htop`, `vim`, `nano` 등).
 - **sudo** 명령 실행 시, 암호 입력이 필요한 경우.
+
+
+
+
+
+
+
+
+
+
 
 ------
 
