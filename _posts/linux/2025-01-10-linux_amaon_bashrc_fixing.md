@@ -25,14 +25,6 @@ Amazon EC2 인스턴스에서
 
 .
 
-.
-
-.
-
-.
-
-
-
 이때는 .bashrc 및 .bash__profile 을 우회해서 접속해야 한다.
 
 1. keypair가 저장된 local 폴더에서 git bash 창을 띄운다.
@@ -47,9 +39,11 @@ $ ssh -i "my-keypair.pem" -t ec2-user@43.200.153.xxx bash --noprofile --norc
 --> 의미 : 사용자 설정을 무시한 클린한 환경에서 bash 실행.
 ```
 
----
-
 SSH 명령어의 **`-t` 옵션**은 **터미널 할당**을 의미해. 원격 서버에 접속할 때, 터미널 세션을 강제로 할당하여 명령어를 실행하거나 대화형 프로그램(예: `bash`, `top`, `htop`)을 실행할 수 있도록 해줘.
+
+
+
+
 
 ------
 
