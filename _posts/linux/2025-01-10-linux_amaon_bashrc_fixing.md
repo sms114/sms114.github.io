@@ -15,8 +15,6 @@ remove_sidebar: true
 search: true
 ---
 
-sddfasdfasd
-
 ## .bashrc 수정 후 ec2 인스턴스에 접속이 안될 때 해결 방법
 
 Amazon EC2 인스턴스에서
