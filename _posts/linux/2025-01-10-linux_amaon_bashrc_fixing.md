@@ -27,7 +27,7 @@ alias 지정을 지정을 통해 좀 더 편의를 주기 위해 .bashrc 내 ali
 
 이때는 .bashrc 및 .bash__profile 을 우회해서 접속해야 한다.
 
-1. keypair가 저장된 local 폴더에서 git bash 로 에뮬레이터로 접속한다.
+1. keypair가 저장된 local 폴더에서 git bash 창을 띄운다.
 
 ![image-20250110113931347](/../images/2025-01-10-linux_amaon_bashrc_fixing/image-20250110113931347.png)
 
