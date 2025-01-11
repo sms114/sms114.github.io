@@ -24,6 +24,18 @@ name                     : "게시판"
 description              : "누리넷 게시판 DASHBOARD"
 url                      : "https://sms114.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
+
+# 카카오 비즈니스 채널 정보 추가
+kakao:
+  channel_name: "sms114 비지니스 채널 바로가기 "
+  channel_url: "http://pf.kakao.com/_xjHcjn"
+
+# KakaoTalk Channel
+#kakao_channel:
+  #url: "http://pf.kakao.com/_xjHcjn"  # 카카오톡 채널 URL
+  #button_text: "카카오톡 채널 추가하기"  # 버튼에 표시할 텍스트
+  #button_image: "/images/kakao_channel_image.png"  # 버튼 이미지 URL
+
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/sms_logo.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -96,6 +108,8 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
+
+
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:

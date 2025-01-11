@@ -26,6 +26,19 @@
 
     <div id="footer" class="page__footer">
       <footer>
+        <div class="kakao-channel">
+          <a href="{{ site.kakao_channel.url }}" target="_blank" style="text-decoration: none;">
+            {% if site.kakao_channel.button_image %}
+            <img 
+              src="{{ site.kakao_channel.button_image }}" 
+              alt="{{ site.kakao_channel.button_text }}" 
+              style="width: 200px; height: auto; border: none;"
+            />
+            {% else %}
+            {{ site.kakao_channel.button_text }}
+            {% endif %}
+          </a>
+        </div>
         {% include footer/custom.html %}
         {% include_cached footer.html %}
       </footer>
