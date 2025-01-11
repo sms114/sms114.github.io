@@ -139,28 +139,16 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://www.sms114.co.kr"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/sms114/sms114.github.io"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/innolifes"
-    - label: "YouTube"
-      icon: "fab fa-youtube"
-      url: "https://www.youtube.com/@김경훈-n5l"
-
+    - label: "Kakao Channel"
+      icon: "fa-solid fa-handshake"
+      url: "http://pf.kakao.com/_xjHcjn"
+      
 # Site Footer
 footer:
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/sms114/sms114.github.io"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/innolifes"
-    - label: "YouTube"
-      icon: "fab fa-youtube"
-      url: "https://www.youtube.com/@김경훈-n5l"
+    - label: "Kakao Channel"
+      icon: "fa-solid fa-handshake"
+      url: "http://pf.kakao.com/_xjHcjn"      
 
 # Reading Files 
 include:
