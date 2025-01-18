@@ -17,8 +17,6 @@ search: true
 
 https://letsencrypt.org/ko/
 
-### 설치 명령어 모음.
-
 **sudo su**
 
 **dnf install openssl mod_ssl**
