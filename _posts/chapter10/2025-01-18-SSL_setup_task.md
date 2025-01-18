@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[SSL적용] EC2 Amazone Free SSL 설치 ( Let's encrypt )"
-categories: [ssl]
+categories: [wordpress ]
 tag: [ SSL, linux ]
 author_profile: false
 typora-root-url: ../

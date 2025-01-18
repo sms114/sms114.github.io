@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "[Summary] 초고속 서버 셋팅  "
-categories: [ chapter09]
-tag: [ aws, 인스턴스, LAPM서버, phpMyAdmin설치  ]
+categories: [ amazon ]
+tag: [ aws, LAPM, phpMyAdmin  ]
 author_profile: false
 typora-root-url: ../
 toc: true
