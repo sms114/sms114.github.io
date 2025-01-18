@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[afiliate] 어필리에이트 전략"
+title:  "[afiliate] 어필리에이트 "
 categories: [ afiliate]
 tag: [ afiliate ]
 author_profile: false

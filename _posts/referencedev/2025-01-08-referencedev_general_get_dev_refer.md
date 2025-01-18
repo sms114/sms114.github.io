@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "[ 레퍼런스 개발법 ] 일반 개발 레퍼런스 구하기 "
+title:  "일반 개발 레퍼런스 구하기 "
 categories: [ wordpress ]
-tag: [ wordpress ]
+tag: [ wordpress, reference ]
 author_profile: false
 typora-root-url: ../
 toc: true

@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "[Summary] 크롤링 "
-categories: [ crowling ]
-tag: [ crowling ]
+title:  "[Summary] 워드프레스 설치 "
+categories: [ wordpress ]
+tag: [ wordpress ]
 author_profile: false
 typora-root-url: ../
 toc: true
@@ -12,6 +12,6 @@ toc_icon: "fas fa-utensils"
 remove_sidebar: true
 ##sidebar:
 ##   nav: "counts"
-search: true	
+search: true
 ---
 

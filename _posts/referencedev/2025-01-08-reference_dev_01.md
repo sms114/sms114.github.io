@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[ 레퍼런스 개발법 ] 워드프레스 레퍼런스 구하기 "
+title:  "워드프레스 레퍼런스 구하기 "
 categories: [ wordpress ]
 tag: [ wordpress ]
 author_profile: false

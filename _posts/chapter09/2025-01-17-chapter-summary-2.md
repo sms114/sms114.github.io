@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "[chapter09] chapter09. [Summary] node & puppeteer & mysql 설치 가이드 "
-categories: [ chapter09 ]
+title:  "[Summary] node & puppeteer & mysql 설치 가이드 "
+categories: [ puppeteer ]
 tag: [ puppeteer, mysql ]
 author_profile: false
 typora-root-url: ../

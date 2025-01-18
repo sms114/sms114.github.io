@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "[Summary] 크롤링 "
-categories: [ crowling ]
-tag: [ crowling ]
+title:  "[SSL적용] SSL 설치"
+categories: [ ssl]
+tag: [ SSL, linux ]
 author_profile: false
 typora-root-url: ../
 toc: true
@@ -12,6 +12,6 @@ toc_icon: "fas fa-utensils"
 remove_sidebar: true
 ##sidebar:
 ##   nav: "counts"
-search: true	
+search: true 
 ---
 

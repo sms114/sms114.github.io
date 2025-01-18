@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[chapter09] chapter09. [Summary] 초고속 서버 셋팅  "
+title:  "[Summary] 초고속 서버 셋팅  "
 categories: [ chapter09]
 tag: [ aws, 인스턴스, LAPM서버, phpMyAdmin설치  ]
 author_profile: false
@@ -19,7 +19,7 @@ search: true
 
 #### 기본적으로, 좌절해본 사람만이 성공의 티켓을 가지고 있는 것.
 
-chapter
+
 
 ## 9-2 AWS 에서 인스턴스 삭제 & 생성과 보안 그룹 설정
 

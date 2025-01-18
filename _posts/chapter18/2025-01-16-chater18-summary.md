@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[wordpress automation] chapter18. [Summary] 해외 워드프레스 자동화 "
+title:  "[wordpress automation][Summary] 해외 워드프레스 자동화 "
 categories: [ wordpress]
 tag: [ automation, wordpress]
 author_profile: false
