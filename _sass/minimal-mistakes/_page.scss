@@ -611,3 +611,29 @@ body {
 .kakao-button:hover {
   background-color: #ffd600;
 }
+
+.external-link {
+  display: inline-block;
+  padding: 10px 20px; /* 버튼 내부 여백 */
+  background-color: #d0e7ff; /* 약한 파란색 바탕 */
+  color: #000000; /* 검정 글씨 */
+  font-size: 1.2em; /* 텍스트 크기 */
+  font-family: "Gungsuh", "serif"; /* 궁서체 적용 */
+  font-weight: bold; /* 텍스트 굵게 */
+  border-radius: 5px; /* 모서리를 둥글게 */
+  text-decoration: none; /* 밑줄 제거 */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+  transition: all 0.3s ease; /* 호버 시 부드러운 애니메이션 */
+
+  &:hover {
+    background-color: #b0d7ff; /* 호버 시 조금 더 진한 파란색 */
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 확대 */
+    transform: scale(1.05); /* 약간 확대 */
+  }
+
+  &:active {
+    background-color: #90c7ff; /* 클릭 시 더 진한 파란색 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 클릭 시 그림자 축소 */
+  }
+}
+
