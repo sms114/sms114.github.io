@@ -21,48 +21,52 @@ search: true
 사이트 주소 : https://letsencrypt.org/ko/
 
 ```sh
-#> sudo su  // root 권한 획득
+// root 권한 획득
+sudo su  
 
 /*
 Openssl :SSL/TLS 통신과 암호화 관련 기능 제공 모듈 설치
 mod_ssl : Apache 웹 서버용 SSL 모듈 설치
 */
-#> dnf install openssl mod_ssl
+dnf install openssl mod_ssl
 
 /*
 python3 : Python 3 버전을 설치, Python 기반 스크립트나 도구를 실행하기 위함
 augeas-libs : Certbot 같은 도구가 설정 파일을 수정할 때 사용하기 위함.
 pip : Python 라이브러리나 모듈을 쉽게 설치하고 관리하는 기능
 */
-#> sudo dnf install -y python3 augeas-libs pip
+sudo dnf install -y python3 augeas-libs pip
 
 // certbot 이 python 에 의존해 돌기 때문에 python도 설치해야 함.
-#> sudo python3 -m venv /opt/certbot/
+sudo python3 -m venv /opt/certbot/
 
-#> ls /opt/certbot
+ls /opt/certbot
 ```
 
 
 
 ```bash
-#> sudo /opt/certbot/bin/pip install --upgrade pip
+sudo /opt/certbot/bin/pip install --upgrade pip
 
-#> sudo /opt/certbot/bin/pip install certbot
+sudo /opt/certbot/bin/pip install certbot
 
-#> sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
 위 명령어 이후, 
-#> certbot
+ certbot
 치면, 아래처럼 certbot의 명령이 어떤 식으로든 먹었다는 것을 인지할 수 있다.
 ```
 
 ![image-20250118131721432](/../images/2025-01-18-SSL_setup_task/image-20250118131721432.png)
 
 ```bash
+//우선 httpd 를 stop 시켜놓는다.
+sudo systemctl stop httpd
+
 // Lets Encrypt 인증서만을 발급받기 위한 command
 // certonly: "인증서만 발급받겠다"는 의미. 웹 서버 설정을 자동으로 수정하지 않고, 인증서만.
 // --standalone: Certbot이 자체적으로 임시 웹 서버를 실행해서 도메인 소유권을 확인하는 방식을 사용하겠다는 뜻.
-#> sudo certbot certonly --standalone
+ sudo certbot certonly --standalone
 -------
   1. 이메일 입력
   2. ACME server에 등록하는 것을 동의하는가? 'Y'
@@ -76,12 +80,12 @@ Key is saved at:         /etc/letsencrypt/live/nurinet.biz/privkey.pem
 */
 
 //httpd 서버 stop
-#> sudo systemctl stop httpd
+ sudo systemctl stop httpd
 //httpd 서버 start
-#> sudo systemctl start httpd
+ sudo systemctl start httpd
 
 //아래, ssl.conf 에 <VirtualHost text 삽입처리
-#> sudo vi /etc/httpd/conf.d/ssl.conf
+ sudo vi /etc/httpd/conf.d/ssl.conf
 ```
 
 ```bash
@@ -104,13 +108,13 @@ Key is saved at:         /etc/letsencrypt/live/nurinet.biz/privkey.pem
 
 ```bash
 //httpd 서버 재시작
-#> sudo systemctl restart httpd
+ sudo systemctl restart httpd
 
 // 이 시점에서 크롬, nurinet.biz의 캐쉬를 삭제하고 다시 접속하면, 안전한 접속이라는 메시지를 확인할 수 있다.
 
-#> sudo dnf install cronie-noanacron
+ sudo dnf install cronie-noanacron
 
-#> sudo vi /etc/crontab
+ sudo vi /etc/crontab
 ```
 
 > /etc/crontab 은 시스템 전체에서 공통으로 사용하는 크론 설정이다.
@@ -154,3 +158,56 @@ Key is saved at:         /etc/letsencrypt/live/nurinet.biz/privkey.pem
 - **`\*` (월):** 특정 월 조건 없음 (매월 실행 가능).
 - **`2` (요일):** **화요일(2)**에만 실행.
 
+---
+
+---
+
+
+
+원본문서============================================================================= 원본 문서
+
+# Amazon Linux 2023 SSL(Let’s encrypt) 적용
+
+원본문서============================================================================= 원본 문서
+
+sudo su 
+
+dnf install openssl mod_ssl
+
+sudo dnf install -y python3 augeas-libs pip
+
+sudo python3 -m venv /opt/certbot/
+
+ls /opt/certbot
+
+sudo /opt/certbot/bin/pip install --upgrade pip
+
+sudo /opt/certbot/bin/pip install certbot
+
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+
+sudo systemctl stop httpd
+
+sudo certbot certonly --standalone
+
+이메일입력, Y, N, 도메인입력
+
+sudo systemctl start httpd
+
+sudo vi /etc/httpd/conf.d/ssl.conf
+
+<VirtualHost *:443>   DocumentRoot "/var/www/html"   ServerAlias [ttj2.tripbay.net](http://ttj2.tripbay.net/)
+
+   SSLEngine on   SSLCertificateFile /etc/letsencrypt/live/ttj2.tripbay.net/cert.pem   SSLCertificateKeyFile /etc/letsencrypt/live/ttj2.tripbay.net/privkey.pem   SSLCertificateChainFile /etc/letsencrypt/live/ttj2.tripbay.net/chain.pem </VirtualHost>
+
+sudo systemctl restart httpd
+
+sudo dnf install cronie-noanacron
+
+sudo vi /etc/crontab
+
+Shell
+
+복사
+
+30 1 * * 2 root /usr/bin/certbot renew --post-hook "systemctl reload httpd"
