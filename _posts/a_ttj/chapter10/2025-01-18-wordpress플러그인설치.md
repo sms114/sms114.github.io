@@ -24,6 +24,12 @@ search: true 우
 * __download__ 해서 해당 파일을 압축 풀고, fillzilla 를 통해 Move 한다.
 * 이 파일을 플로그인에서 다운 받지 말고, 아래 화면처럼 직접 download 버튼을 눌러, 받은 파일을 압축 받아서, fillzilla 로 
   /var/www/html/wp-content/plugin 에 붙여 넣는다.
+  
+  
+  
+  > **아래 sftp 플러그인 폴더명 : ssh-sftp-updater-support.1.0.0**
+  >
+  > 
 
 ![image-20250118162618358](/../images/2025-01-18-wordpress플러그인설치/image-20250118162618358.png)
 
@@ -33,22 +39,24 @@ search: true 우
 
 
 
-### 2. plugin 폴더에 해당 플러그인 옮겨 놓고, 다시 한번 아래 linux 권한 설정을 처리 한다.
+### 2. plugin 폴더에 해당 플러그인 옮겨 놓고, 다시 한번 아래 linux 권한 설정을 처리 한다.(선택1)
 
 #### 2-1 요약 - 파일권한설정
 
+## **(요약)**
+
 ```bash
-$ sudo chown -R ec2-user:apaceh /var/www
-$ sudo usermod -a -G apache ec2-user
-$ sudo chmod 2775 /var/www
-$ find /var/www -type d -exec sudo chmod 2775 {} \;
-$ sudo chown ec2-user:apache /var/www/html/.htaccess
+sudo chown -R ec2-user:apache /var/www
+sudo usermod -a -G apache ec2-user
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+sudo chown ec2-user:apache /var/www/html/.htaccess
 
 ```
 
+## **(참고 reference )**
 
-
-#### 2-2 파일 권한 설정 ( <https://docs.aws.amazon.com/ko_kr/linux/al2023/ug/ec2-lamp-amazon-linux-2023.html>)
+#### 파일 권한 설정 ( <https://docs.aws.amazon.com/ko_kr/linux/al2023/ug/ec2-lamp-amazon-linux-2023.html>)
 
 1. 사용자(이 경우는 `ec2-user`)를 `apache` 그룹에 추가합니다.
 
@@ -88,6 +96,103 @@ $ sudo chown ec2-user:apache /var/www/html/.htaccess
    ```
    [ec2-user ~]$ find /var/www -type f -exec sudo chmod 0664 {} \;
    ```
+
+
+
+#### 2-2 .htacess  modify
+
+**아래 .htaccess 로 파일 교체**
+
+
+```bash
+# BEGIN WordPress
+# "BEGIN WordPress"와 "END WordPress" 사이의 지시문(줄)은 
+# 동적으로 생성되며 워드프레스 필터를 통해서만 수정해야합니다. 
+# 이 표시 사이의 지시문을 변경하면 덮어쓰게 됩니다.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+```
+
+>`.htaccess` 파일은 **Apache 웹 서버**에서 URL 재작성(Rewrite) 규칙을 설정하는 코드다. 주로 **워드프레스(WordPress)나 Laravel 같은 프레임워크에서 사용**되며, **SEO-friendly한 URL을 생성하거나 보안 설정을 강화**할 때 사용된다.
+
+```apache
+<IfModule mod_rewrite.c>
+```
+
+`mod_rewrite` 모듈이 활성화되어 있는지 확인하는 조건문.
+
+`mod_rewrite.c`가 **설치되어 있고 사용할 수 있을 때만** 내부 코드를 실행함.
+
+```apache
+RewriteEngine On
+```
+
+**URL Rewrite 기능을 활성화**하는 명령어.
+
+`mod_rewrite`가 동작하도록 허용하는 설정.
+
+```
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+```
+
+- `.*` → **모든 요청(URL 포함)**에 대해 적용됨.
+
+- `-` → **URL 변경 없음 (rewrite 없이 원래 URL 그대로 사용)**
+
+- ```
+  [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  ```
+
+  - `HTTP_AUTHORIZATION` 헤더 값을 유지하도록 환경 변수(Environment Variable)를 설정하는 역할.
+  - API 인증을 사용할 때, 특히 `Authorization` 헤더를 프록시 서버(Nginx, Apache)에서 유지하는 데 필요함.
+
+```
+RewriteBase /
+```
+
+- **Rewrite 규칙의 기준(base) 디렉토리**를 설정.
+- `/`는 **사이트 루트 디렉토리에서 URL 재작성**이 수행된다는 의미.
+
+```
+RewriteRule ^index\.php$ - [L]
+```
+
+- `^index\.php$` → `index.php` 파일로 직접 접근하는 경우
+- `-` → URL 변경 없이 그대로 둠 (Rewrite 안 함)
+- `[L]` → 이 규칙이 **적용되면 다른 규칙들은 더 이상 실행되지 않음**
+
+```
+RewriteCond %{REQUEST_FILENAME} !-f
+```
+
+- `REQUEST_FILENAME` → 현재 요청된 파일
+- `!-f` → 요청된 파일이 존재하지 **않는 경우**에만 다음 RewriteRule 실행
+
+```
+RewriteCond %{REQUEST_FILENAME} !-d
+```
+
+- `REQUEST_FILENAME` → 현재 요청된 폴더(디렉토리)
+- `!-d` → 요청된 경로가 **디렉토리가 아닌 경우**에만 다음 RewriteRule 실행
+
+```
+RewriteRule . /index.php [L]
+```
+
+- `.` → **모든 요청을 의미**
+- `/index.php` → 모든 요청을 `index.php`로 리디렉트 (즉, `index.php`가 요청을 처리하도록 함)
+- `[L]` → 이 규칙이 적용되면 더 이상 다른 규칙 실행 안 함
+
+
 
 
 

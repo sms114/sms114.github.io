@@ -24,13 +24,13 @@ FTP 는 SSH 를 기반으로 동작하므로 SSH 계정의 비밀번호를 설�
 ##### 1.  터미널을 열고, SFTP 사용 계정의 비밀번호를 설정한다.
 
 ```bash
-$ sudo passwd ec2-user 
+sudo passwd ec2-user 
 ```
 
-#### 2. sshd_config 파일 열기
+#### 2. -sshd_config 파일 열기
 
 ```bash
-$ sudo vi /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
 ```
 
 ```bash
@@ -47,7 +47,7 @@ PermitEmptyPasswords no
 위 설정을 저장한 후 SSH 서비스를 재시작한다.
 
 ```BASH
-$ sudo systemctl restart ssh
+sudo systemctl restart httpd
 ```
 
 ---
@@ -67,27 +67,19 @@ SFTP는 SSH를 기반으로 동작하므로 SSH 계정의 비밀번호를 설정
 1. 터미널을 열고, SFTP 사용 계정의 비밀번호를 설정합니다:
 
    ```
-   bash
-   
-   
-   코드 복사
    sudo passwd [사용자명]
    ```
-
+   
    예: 사용자명이 
-
+   
    ```
-   user
+user
    ```
 
    라면:
-
+   
    ```
-   bash
-   
-   
-   코드 복사
-   sudo passwd user
+sudo passwd user
    ```
 
 2. 새 비밀번호를 입력하고 확인합니다.
@@ -101,11 +93,7 @@ SFTP는 SSH를 기반으로 동작하므로 SSH 계정의 비밀번호를 설정
 ### 2-1. `sshd_config` 파일 열기
 
 ```
-bash
-
-
-코드 복사
-sudo nano /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
 ```
 
 ### 2-2. 주요 설정 변경
@@ -115,26 +103,21 @@ sudo nano /etc/ssh/sshd_config
 1. **SFTP 서브시스템 활성화 확인** 아래 내용이 포함되어 있는지 확인합니다.
 
    ```
-   text
-   
-   
-   코드 복사
    Subsystem sftp /usr/lib/openssh/sftp-server
    ```
-
+   
    없다면 추가하거나 수정합니다.
-
+   
 2. **비밀번호 인증 활성화** 아래 두 줄이 포함되어 있는지 확인하고, `yes`로 설정합니다.
 
    ```
-   text코드 복사PasswordAuthentication yes
-   PermitRootLogin no
+   PasswordAuthentication yes
    ```
-
+   
 3. **SFTP 전용 계정 설정 (선택 사항)** 특정 사용자를 SFTP 전용으로 만들고 싶다면 아래를 추가합니다.
 
    ```
-   text코드 복사Match User [사용자명]
+   Match User [사용자명]
        ChrootDirectory /home/[사용자명]
        ForceCommand internal-sftp
        AllowTcpForwarding no
@@ -144,7 +127,7 @@ sudo nano /etc/ssh/sshd_config
    예: 사용자명이 `user`라면:
 
    ```
-   text코드 복사Match User user
+   Match User user
        ChrootDirectory /home/user
        ForceCommand internal-sftp
        AllowTcpForwarding no
@@ -153,14 +136,10 @@ sudo nano /etc/ssh/sshd_config
 
 ### 2-3. SSH 서비스 재시작
 
-설정을 저장한 후 SSH 서비스를 재시작합니다.
+설정을 저장한 후 httpd 서비스를 재시작합니다.
 
 ```
-bash
-
-
-코드 복사
-sudo systemctl restart ssh
+sudo systemctl restart httpd
 ```
 
 ------
@@ -205,17 +184,16 @@ VS Code에서 SFTP를 사용하려면 SSH 확장 프로그램이 필요합니다
 
      ![250112_vscode](/../images/2025-01-12-linux-sftp_pwd_sedtting/250112_vscode.png)
      
-
-   - sftp:List All 을 선택한다. 그리고 엔터, 그리고 또 엔터
-
-   - 그러면 sftp 로 연결된 내 Amazon EC2 인스턴스 내, /var/www/html 폴더에 존재하는 파일 List 가 보일 것이다.
+- sftp:List All 을 선택한다. 그리고 엔터, 그리고 또 엔터
+   
+- 그러면 sftp 로 연결된 내 Amazon EC2 인스턴스 내, /var/www/html 폴더에 존재하는 파일 List 가 보일 것이다.
      아래는, sms114amazone 경로와 연결된 ec2 linux 원격 서버와 연결된 상태의 vscode 이다.
-
-     ![image-20250112231845780](/../images/2025-01-12-linux-sftp_pwd_sedtting/image-20250112231845780.png)
-
-     ### 기타 메모 
-
-     * 왼쪽 Dashboard 에 파일또는 폴더를 삭제해도 로컬에 있는 것이 삭제될 뿐, 원격 서버에 있는 폴더 또는 파일이 삭제되는 것이 아니다.
+   
+  ![image-20250112231845780](/../images/2025-01-12-linux-sftp_pwd_sedtting/image-20250112231845780.png)
+   
+  ### 기타 메모 
+   
+  * 왼쪽 Dashboard 에 파일또는 폴더를 삭제해도 로컬에 있는 것이 삭제될 뿐, 원격 서버에 있는 폴더 또는 파일이 삭제되는 것이 아니다.
 
 
 
