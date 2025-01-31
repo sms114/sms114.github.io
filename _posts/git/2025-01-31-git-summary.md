@@ -77,10 +77,14 @@ git pull origin main --rebase
 
 4. git remote add origin https://github.com/sms114/0bsidian-public-repository-2025-01-31.git
 
+   >__private repository__ 에 접근하고자 할 경우....
+   >
+   >git remote add origin https://innolifes22:github_pat_11A3EKVYY0kwzxxxxxxxr6gfjuFL2_jN6UZJDj6rH9Vpenlj8VF7GHusDCHVzs1FcGmcNi9orYSMYL5HPbY7LzdLd@github.com/innolifes22/obsidian_private_Note_20250131.git
+
 5. git remote -v  // 정상적으로 연결되었는지 확인
    ```bash
-   origin  https://github.com/sms114/0bsidian-public-repository-2025-01-31.git (fetch)
-   origin  https://github.com/sms114/0bsidian-public-repository-2025-01-31.git (push)
+   origin  https://github.com/innolifes22/0bsidian-public-repository-2025-01-31.git (fetch)
+   origin  https://github.com/innolifes22/0bsidian-public-repository-2025-01-31.git (push)
    ```
 
 6. GitHub에 처음으로 파일 업로드
@@ -103,4 +107,31 @@ git pull origin main --rebase
 
    
 
-   
+   # 기존 GitHub 인증 정보 삭제하려면?
+
+
+
+## **1. Git Credential Manager에서 기존 인증 정보 삭제**
+
+### **① 저장된 GitHub 인증 정보 삭제**
+
+```
+git credential reject https://github.com
+```
+
+이후 다시 `git push`를 시도하면 GitHub 로그인 정보를 다시 입력하라고 할 거야.
+
+------
+
+## **2. Windows 자격 증명 관리자에서 삭제 (GUI 방식)**
+
+Git이 Windows의 **자격 증명 관리자**에 인증 정보를 저장하는 경우도 있어.
+이걸 직접 삭제하는 방법이야.
+
+### **Windows에서 GitHub 인증 정보 삭제 방법**
+
+1. **Windows 검색창에 `자격 증명 관리자` 입력 후 실행**
+2. **Windows 자격 증명** 탭 선택
+3. **GitHub 관련 항목** (`git:https://github.com`) 찾기
+4. **해당 항목을 삭제**
+
