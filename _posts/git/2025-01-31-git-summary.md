@@ -75,11 +75,16 @@ git pull origin main --rebase
 
 3. git init
 
-4. git remote add origin https://github.com/sms114/0bsidian-public-repository-2025-01-31.git
+4. git remote add origin https://github.com/innolifes22/obsidian_private_Note_20250131.git
 
    >__private repository__ 에 접근하고자 할 경우....
    >
    >git remote add origin https://innolifes22:github_pat_11A3EKVYY0kwzxxxxxxxr6gfjuFL2_jN6UZJDj6rH9Vpenlj8VF7GHusDCHVzs1FcGmcNi9orYSMYL5HPbY7LzdLd@github.com/innolifes22/obsidian_private_Note_20250131.git
+
+   git remote add origin https://github.com/innolifes22/obsidian_private_Note_20250131.git
+   위에서 잘 못 셋팅된 것 올바른 설정은? 
+
+   git remote set-url origin https://github.com/innolifes22/obsidian_private_Note_20250131.git
 
 5. git remote -v  // 정상적으로 연결되었는지 확인
    ```bash
