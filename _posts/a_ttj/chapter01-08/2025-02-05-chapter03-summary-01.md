@@ -327,4 +327,4 @@ live Server 플러그인 설치
 
 
 
-![image-20250205212425936](/../../images/2025-02-05-chapter03-summary-01/image-20250205212425936.png)
+![image-20250205212425936](/../../images/2025-02-05-chapter03-summary-01/image-20250205212425936.png)[]()

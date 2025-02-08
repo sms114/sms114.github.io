@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[linux] SFTP 비번 접속 및 VSCODE SETTING"
+title:  "[linux] SFTP 비번 접속 및 VSCODE SETTING & Resetting"
 categories: [ linux ]
 tag: [ linux, sshd, vscode, sftp ]
 author_profile: false
@@ -47,7 +47,7 @@ PermitEmptyPasswords no
 위 설정을 저장한 후 SSH 서비스를 재시작한다.
 
 ```BASH
-sudo systemctl restart httpd
+sudo systemctl restart sshd
 ```
 
 ---
@@ -139,7 +139,7 @@ sudo vi /etc/ssh/sshd_config
 설정을 저장한 후 httpd 서비스를 재시작합니다.
 
 ```
-sudo systemctl restart httpd
+sudo systemctl restart sshd
 ```
 
 ------
@@ -185,14 +185,41 @@ VS Code에서 SFTP를 사용하려면 SSH 확장 프로그램이 필요합니다
      ![250112_vscode](/../images/2025-01-12-linux-sftp_pwd_sedtting/250112_vscode.png)
      
 - sftp:List All 을 선택한다. 그리고 엔터, 그리고 또 엔터
-   
+  
 - 그러면 sftp 로 연결된 내 Amazon EC2 인스턴스 내, /var/www/html 폴더에 존재하는 파일 List 가 보일 것이다.
      아래는, sms114amazone 경로와 연결된 ec2 linux 원격 서버와 연결된 상태의 vscode 이다.
    
   ![image-20250112231845780](/../images/2025-01-12-linux-sftp_pwd_sedtting/image-20250112231845780.png)
-   
+  
+  
+  
+  ### 다시 VSCODE 와 AMAZON EC2 서버 연결시킬 때는?
+  
+  ![image-20250206110123841](/../images/2025-01-12-linux-sftp_pwd_sedtting/image-20250206110123841.png)
+  
+  ![image-20250206110138924](/../images/2025-01-12-linux-sftp_pwd_sedtting/image-20250206110138924.png)
+  
+  위 이미지에서 처럼,
+  
+  다시 한번, 
+  
+  1. **Ctrl + Shift + P** → `"Remote-SSH: Connect to Host..."` 선택
+  
+  2. `"Add New SSH Host"` 클릭
+  
+  3.  아래,
+     ```sql
+     ssh -i "C:/Users/your-name/.ssh/your-key.pem" ec2-user@your-ec2-ip
+     ```
+  
+  
+  
+  로 연결해서 사용한다.
+  
+  
+  
   ### 기타 메모 
-   
+  
   * 왼쪽 Dashboard 에 파일또는 폴더를 삭제해도 로컬에 있는 것이 삭제될 뿐, 원격 서버에 있는 폴더 또는 파일이 삭제되는 것이 아니다.
 
 
