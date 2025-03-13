@@ -127,9 +127,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "누리넷(주)"
+  name             : "소우주(주)"
   avatar           : "/images/git_image1.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "문자발송 및 DIY 상품 판매"
+  bio              : "김경훈의 기술 블로그"
   location         : "South Korea"
   email            :
   links:
