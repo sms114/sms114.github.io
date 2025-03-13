@@ -17,9 +17,9 @@ minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "대량문자발송서비스"
+title                    : "김경훈의 기술 블로그"
 title_separator          : "|"
-subtitle                 : "sms114.co.kr" # site tagline that appears below site title in masthead
+subtitle                 : "메모가 답이다." # site tagline that appears below site title in masthead
 name                     : "게시판"
 description              : "누리넷 게시판 DASHBOARD"
 url                      : "https://sms114.github.io"
